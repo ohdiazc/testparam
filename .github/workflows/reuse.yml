@@ -1,0 +1,27 @@
+---
+name: Reusable workflow
+
+on:
+  workflow_call: 
+    inputs: 
+      var1:
+        required: true
+        type: string
+      var2:
+        required: true
+        type: string
+      var3:
+        required: false
+        type: string
+        default: ""
+
+
+jobs:
+  print-vars:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ inputs.var1 }}
+      - run: echo ${{ inputs.var2 }}
+      - run: echo ${{ inputs.var3 }}
+  
+        

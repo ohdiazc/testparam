@@ -1,0 +1,47 @@
+---
+name: 'testparam'
+on:
+ workflow_dispatch:
+    inputs:
+      envdep:
+        description: 'Env dep'
+        required: true
+        default: 'preprod'
+        type: choice
+        options:
+          - prod
+          - test1
+          - test2
+          - preprod
+      print_env:
+        description: 'True to print to STDOUT'
+        required: true
+        type: boolean
+    #  tags:
+    #    description: 'Test scenario tags'
+    #    required: true
+    #    type: string
+    #  environment:
+    #    description: 'Environment to run tests against'
+    #    type: environment
+    #    required: true
+
+jobs:
+  print-tag:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.print_env }} 
+    steps:
+      - name: Print the input env to STDOUT
+        run: echo  The env is ${{ inputs.envdep }}
+
+    needs: call-reusable-workflow
+
+  call-reusable-workflow:
+    uses: ./.github/workflows/reuse.yml
+    with:
+     var1: '3.10'
+     var2: 'pip'  # Change to 'poetry' if you are using Poetry
+     var3: ''  # Add additional install args if needed
+
+  call-reusable-workflowi-api:
+    uses: ./.github/workflows/reuse_api.yml
