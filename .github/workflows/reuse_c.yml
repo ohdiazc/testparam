@@ -5,15 +5,15 @@ on:
   workflow_call: 
 
 jobs:
-  print-vars:
+  build-c:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v5
     - run: |
         pwd
         ls -lart 
-        #gcc --version
-        #gcc -o testc test.c 
+        gcc --version
+        gcc -o testc testc.c 
             
   
         
