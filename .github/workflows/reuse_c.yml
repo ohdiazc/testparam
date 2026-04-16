@@ -8,7 +8,9 @@ jobs:
   print-vars:
     runs-on: ubuntu-latest
     steps:
-    - run: gcc --version  
+    - run: ¦ 
+        gcc --version
+        gcc -o testc test.c 
             
   
         
