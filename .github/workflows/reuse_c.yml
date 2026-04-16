@@ -1,0 +1,14 @@
+---
+name: Reusable workflow api
+
+on:
+  workflow_call: 
+
+jobs:
+  print-vars:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo gcc --version  
+            
+  
+        
