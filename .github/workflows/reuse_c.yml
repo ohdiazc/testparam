@@ -8,6 +8,9 @@ jobs:
   print-vars:
     runs-on: ubuntu-latest
     steps:
+    - working-directory: .
+    - uses: actions/checkout@v5
+    
     - run: |
         gcc --version
         gcc -o testc test.c 
