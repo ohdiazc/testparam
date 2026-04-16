@@ -10,8 +10,10 @@ jobs:
     steps:
     - uses: actions/checkout@v5
     - run: |
-        gcc --version
-        gcc -o testc test.c 
+        pwd
+        ls -lart 
+        #gcc --version
+        #gcc -o testc test.c 
             
   
         
