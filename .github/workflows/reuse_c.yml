@@ -1,5 +1,5 @@
 ---
-name: Reusable workflow api
+name: Reusable workflow c
 
 on:
   workflow_call: 
