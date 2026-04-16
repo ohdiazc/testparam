@@ -43,5 +43,8 @@ jobs:
      var2: 'pip'  # Change to 'poetry' if you are using Poetry
      var3: ''  # Add additional install args if needed
 
-  call-reusable-workflowi-api:
+  call-reusable-workflow-api:
     uses: ./.github/workflows/reuse_api.yml
+
+  call-reusable-workflow-c:
+    uses: ./.github/workflows/reuse_c.yml
