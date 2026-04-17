@@ -49,5 +49,5 @@ jobs:
   call-reusable-workflow-c:
     uses: ./.github/workflows/reuse_c.yml
 
-  call-reusable-workflow-c:
+  call-reusable-workflow-artifact:
     uses: ./.github/workflows/get_artifact.yml
