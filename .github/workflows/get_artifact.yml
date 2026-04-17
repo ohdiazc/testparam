@@ -1,0 +1,21 @@
+---
+name: Reusable workflow get artifact
+
+on:
+  workflow_call: 
+
+jobs:
+  get-artifact:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download artifact from build
+      uses: bettermarks/action-artifact-download@0.3.0
+      with:
+        repo: ohdiazc/testparam
+        #token: ${{ secrets.GITHUB_TOKEN }}
+        artifact_name: my-artifact-c1
+        rename: my-artifact-c1-run    
+        wait_seconds: 60  
+    - run: |
+          pwd 
+          ls -lart 
