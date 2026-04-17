@@ -15,5 +15,7 @@ jobs:
     - run: |
           pwd 
           ls -lart
+          echo chmod 755 testc
           chmod 755 testc
+          ls -lart
           ./testc
