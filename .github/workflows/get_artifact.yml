@@ -12,7 +12,7 @@ jobs:
       uses: bettermarks/action-artifact-download@0.3.0
       with:
         repo: ohdiazc/testparam
-        #token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         artifact_name: my-artifact-c1
         rename: my-artifact-c1-run    
         wait_seconds: 60  
