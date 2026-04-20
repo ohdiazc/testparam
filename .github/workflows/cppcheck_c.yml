@@ -17,7 +17,7 @@ jobs:
         ./testc 
     - name: check_lint_c
       run: |
-        DEBIAN_FRONTEND=noninteractive apt -y install cppcheck 
+        DEBIAN_FRONTEND=noninteractive sudo apt -y install cppcheck 
         which cppcheck
         cppcheck --enable=all testc.c --checkers-report=testc_report.txt  2>/dev/null 1>/dev/null
         if grep "No critical errors"  testc_report.txt; then  echo 'No Errors'; else echo 'Errors'; fi
