@@ -20,5 +20,5 @@ jobs:
         sudo pipx install cpplint
         pipx ensurepath --force
         which cpplint
-        ./cpplint testc.c
+        cpplint testc.c
       continue-on-error: true
