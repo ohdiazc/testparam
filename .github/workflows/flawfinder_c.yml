@@ -1,0 +1,23 @@
+---
+name: Reusable workflow cppcheck c
+
+on:
+  workflow_call: 
+
+jobs:
+  flawfinder-c:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v5
+    - run: |
+        pwd
+        ls -lart 
+        gcc --version
+        gcc -o testc testc.c 
+        ./testc 
+    - name: check_flawfinder_c
+      run: |
+        DEBIAN_FRONTEND=noninteractive sudo apt -y install flawfinder 
+        which flawfinder
+        if ${flawfinder testc.c   |  grep "Minimum risk level"  | awk -F '=' '{print $2}'} == "1"; then echo 'No Errors'; else echo 'Errors'; fi
+      continue-on-error: true
