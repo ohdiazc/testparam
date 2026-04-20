@@ -18,7 +18,7 @@ jobs:
     - name: check_lint_c
       run: |
         sudo pipx install cpplint
-        pipx ensurepath
-        which ccplint
+        pipx ensurepath --force
+        which cpplint
         ./cpplint testc.c
       continue-on-error: true
