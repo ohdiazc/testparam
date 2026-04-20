@@ -17,7 +17,7 @@ jobs:
         ./testc 
     - name: check_lint_c
       run: |
-        apt update
+        #apt update
         DEBIAN_FRONTEND=noninteractive apt -y install cppcheck 
         which cppcheckt
         cppcheck --enable=all testc.c --checkers-report=testc_report.txt  2>/dev/null 1>/dev/null
