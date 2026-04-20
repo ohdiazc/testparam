@@ -52,3 +52,8 @@ jobs:
   call-reusable-workflow-artifact:
     uses: ./.github/workflows/get_artifact.yml
     needs: call-reusable-workflow-c
+
+
+    call-reusable-workflow-artifact:
+    uses: ./.github/workflows/lint_c.yml
+    needs: call-reusable-workflow-lint-c
