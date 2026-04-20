@@ -19,5 +19,5 @@ jobs:
       run: |
         DEBIAN_FRONTEND=noninteractive sudo apt -y install flawfinder 
         which flawfinder
-        if $(flawfinder testc.c   |  grep "Minimum risk level"  | awk -F '=' '{print $2}') == "1"; then echo 'No Errors'; else echo 'Errors'; fi
+        if "$(flawfinder testc.c   |  grep "Minimum risk level"  | awk -F '=' '{print $2}')" == "1"; then echo 'No Errors'; else echo 'Errors'; fi
       continue-on-error: true
