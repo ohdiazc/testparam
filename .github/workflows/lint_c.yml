@@ -17,5 +17,6 @@ jobs:
         ./testc 
     - name: check_lint_c
       run: |
-        sudo apt install cppcheck
-        ./cppcheck --enable=all testc.c
+        sudo pipx install cpplint
+        which ccplint
+        ./cpplint testc.c
