@@ -17,4 +17,5 @@ jobs:
         ./testc 
     - name: check_lint_c
       run: |
-        pipx install cpplint  
+        pipx install cpplint
+        cppcheck --enable-all testc.c
