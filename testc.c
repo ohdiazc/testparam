@@ -1,4 +1,4 @@
-#"Copyright 2026 <Copyright odiaz>"
+/*"Copyright 2026 <Copyright odiaz>"*/
 #include <stdio.h>
 
 int main(void) {
