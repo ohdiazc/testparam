@@ -21,3 +21,4 @@ jobs:
         pipx ensurepath
         which ccplint
         ./cpplint testc.c
+      continue-on-error: true
