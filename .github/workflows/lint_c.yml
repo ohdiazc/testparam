@@ -18,5 +18,6 @@ jobs:
     - name: check_lint_c
       run: |
         sudo pipx install cpplint
+        pipx ensurepath
         which ccplint
         ./cpplint testc.c
