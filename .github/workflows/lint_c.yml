@@ -1,0 +1,20 @@
+---
+name: Reusable workflow c
+
+on:
+  workflow_call: 
+
+jobs:
+  build-c:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v5
+    - run: |
+        pwd
+        ls -lart 
+        gcc --version
+        gcc -o testc testc.c 
+        ./testc 
+    - name: check_lint_c
+      run: |
+        pipx install cpplint  
