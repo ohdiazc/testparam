@@ -17,7 +17,7 @@ jobs:
         ./testc 
     - name: check_clang_c
       run: |
-        DEBIAN_FRONTEND=noninteractive sudo apt -y clang flawfinder 
+        DEBIAN_FRONTEND=noninteractive sudo apt -y install clang
         which clang
         RET=$(clang --analyze testc.c)
         echo "This is RET :""[$RET]"
