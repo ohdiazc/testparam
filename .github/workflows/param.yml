@@ -62,3 +62,6 @@ jobs:
 
   call-reusable-workflow-flawfinder-c:
     uses: ./.github/workflows/flawfinder_c.yml
+
+  call-reusable-workflow-clang-c:
+    uses: ./.github/workflows/clang_c.yml
