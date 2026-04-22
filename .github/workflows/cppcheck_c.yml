@@ -15,7 +15,7 @@ jobs:
         gcc --version
         gcc -o testc testc.c 
         ./testc 
-    - name: check_lint_c
+    - name: check_cppcheck_c
       run: |
         DEBIAN_FRONTEND=noninteractive sudo apt -y install cppcheck 
         which cppcheck
