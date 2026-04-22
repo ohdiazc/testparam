@@ -1,5 +1,5 @@
 ---
-name: Reusable workflow cppcheck c
+name: Reusable workflow flawfinder c
 
 on:
   workflow_call: 
