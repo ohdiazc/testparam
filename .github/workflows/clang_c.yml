@@ -1,0 +1,25 @@
+---
+name: Reusable workflow clang c
+
+on:
+  workflow_call: 
+
+jobs:
+  flawfinder-c:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v5
+    - run: |
+        pwd
+        ls -lart 
+        gcc --version
+        gcc -o testc testc.c 
+        ./testc 
+    - name: check_clang_c
+      run: |
+        DEBIAN_FRONTEND=noninteractive sudo apt -y clang flawfinder 
+        which clang
+        RET=$(clang --analyze testc.c)
+        echo "This is RET :""[$RET]"
+        if [ "$RET" == "" ]; then echo 'No Errors'; else echo 'Errors'; fi
+      continue-on-error: true
