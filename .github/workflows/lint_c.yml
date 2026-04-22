@@ -1,11 +1,11 @@
 ---
-name: Reusable workflow c
+name: Reusable workflow lint c
 
 on:
   workflow_call: 
 
 jobs:
-  build-c:
+  lint-c:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v5
