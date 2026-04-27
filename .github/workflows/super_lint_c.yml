@@ -1,0 +1,20 @@
+---
+name: Reusable workflow super lint c
+
+on:
+  workflow_call: 
+
+jobs:
+  super-lint-c:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v5
+    - run: |
+        pwd
+        ls -lart 
+        gcc --version
+        gcc -o testc testc.c 
+        ./testc 
+    - name: check_lint_c
+      uses: super-linter/super-linter@v8.6.0 # x-release-please-version
+      continue-on-error: true
