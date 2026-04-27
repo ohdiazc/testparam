@@ -56,6 +56,10 @@ jobs:
 
   call-reusable-workflow-lint-c:
     uses: ./.github/workflows/lint_c.yml
+
+  call-reusable-workflow-super-lint-c:
+    uses: ./.github/workflows/super_lint_c.yml
+    needs: call-reusable-workflow-lint-c
     
   call-reusable-workflow-cppcheck-c:
     uses: ./.github/workflows/cppcheck_c.yml
