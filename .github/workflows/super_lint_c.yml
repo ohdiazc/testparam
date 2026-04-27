@@ -17,4 +17,7 @@ jobs:
         ./testc 
     - name: check_lint_c
       uses: super-linter/super-linter@v8.6.0 # x-release-please-version
+      env:
+          # To report GitHub Actions status checks
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       continue-on-error: true
